@@ -1,0 +1,32 @@
+{
+  "usuario": "Emanuel",
+  "juegos": [
+    {
+      "tipo": "Singleplayer",
+      "nombre": "Elden Ring",
+      "plataforma": "PC",
+      "dificultad": 9,
+      "horas_jugadas": 150,
+      "historia": "Un semidios en un mundo abierto oscuro y brutal",
+      "completado": false
+    },
+    {
+      "tipo": "Multiplayer",
+      "nombre": "Valorant",
+      "plataforma": "PC",
+      "dificultad": 7,
+      "horas_jugadas": 320,
+      "modo": "competitivo",
+      "ranking": 45
+    },
+    {
+      "tipo": "Mobile",
+      "nombre": "Clash Royale",
+      "plataforma": "Android",
+      "dificultad": 5,
+      "horas_jugadas": 80,
+      "energia_max": 10,
+      "tiene_compras": true
+    }
+  ]
+}

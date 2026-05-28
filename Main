@@ -1,0 +1,48 @@
+from catalogo import Catalogo
+import funciones_catalogo as fc
+
+def mostrar_menu():
+    print("\n" + "=" * 42)
+    print("       CATALOGO DE VIDEOJUEGOS")
+    print("=" * 42)
+    print("  1. Agregar juego")
+    print("  2. Ver catalogo completo")
+    print("  3. Buscar juego")
+    print("  4. Actualizar horas de juego")
+    print("  5. Accion especial del juego")
+    print("  6. Filtrar juegos")
+    print("  7. Eliminar juego")
+    print("  8. Estadisticas")
+    print("  9. Salir")
+    print("=" * 42)
+
+def ejecutar_menu():
+    nombre = input("Como te llamas? ").strip() or "Jugador"
+    mi_catalogo = Catalogo(nombre)
+    print(f"\nBienvenido, {nombre}! Tu catalogo esta listo.")
+
+    acciones = {
+        "1": lambda: fc.agregar_juego(mi_catalogo),
+        "2": lambda: fc.mostrar_catalogo(mi_catalogo),
+        "3": lambda: fc.buscar_juego(mi_catalogo),
+        "4": lambda: fc.sumar_horas(mi_catalogo),
+        "5": lambda: fc.accion_especial(mi_catalogo),
+        "6": lambda: fc.filtrar_juegos(mi_catalogo),
+        "7": lambda: fc.eliminar_juego(mi_catalogo),
+        "8": lambda: fc.mostrar_estadisticas(mi_catalogo),
+    }
+
+    while True:
+        mostrar_menu()
+        opcion = input("Que quieres hacer? (1-9): ").strip()
+
+        if opcion == "9":
+            print(f"\nHasta luego, {nombre}! Vuelve pronto.")
+            break
+        elif opcion in acciones:
+            acciones[opcion]()
+        else:
+            print("Opcion invalida. Elige un numero del 1 al 9.")
+
+if __name__ == "__main__":
+    ejecutar_menu()

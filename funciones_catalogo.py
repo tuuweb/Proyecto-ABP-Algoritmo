@@ -1,6 +1,6 @@
 from tipos_juego import JuegoSingleplayer, JuegoMultiplayer, JuegoMobile
 
-# ── Entradas seguras ──────────────────────────────────────────────────────────
+# Entradas seguras
 
 def pedir_entero(mensaje, minimo=None, maximo=None):
     while True:
@@ -30,7 +30,7 @@ def pedir_si_no(mensaje):
             return r == "s"
         print("  Escribe 's' para si o 'n' para no.")
 
-# ── Agregar segun tipo ────────────────────────────────────────────────────────
+# Agregar segun tipo
 
 def agregar_juego(catalogo):
     print("\n-- Agregar juego --")
@@ -71,7 +71,7 @@ def agregar_juego(catalogo):
     except ValueError as e:
         print(f"Error al crear el juego: {e}")
 
-# ── Ver catalogo ──────────────────────────────────────────────────────────────
+# Ver catalogo
 
 def mostrar_catalogo(catalogo):
     juegos = catalogo.listar()
@@ -82,7 +82,7 @@ def mostrar_catalogo(catalogo):
     for j in juegos:
         j.mostrar_info()
 
-# ── Buscar ────────────────────────────────────────────────────────────────────
+#  Buscar
 
 def buscar_juego(catalogo):
     nombre = pedir_texto("Nombre del juego a buscar: ")
@@ -92,7 +92,7 @@ def buscar_juego(catalogo):
     else:
         print(f"'{nombre}' no esta en el catalogo.")
 
-# ── Actualizar horas ──────────────────────────────────────────────────────────
+# Actualizar horas 
 
 def sumar_horas(catalogo):
     if len(catalogo) == 0:
@@ -106,7 +106,7 @@ def sumar_horas(catalogo):
     else:
         print(f"'{nombre}' no esta en el catalogo.")
 
-# ── Eliminar ──────────────────────────────────────────────────────────────────
+#  Eliminar 
 
 def eliminar_juego(catalogo):
     if len(catalogo) == 0:
@@ -123,7 +123,7 @@ def eliminar_juego(catalogo):
     else:
         print("Cancelado.")
 
-# ── Filtros ───────────────────────────────────────────────────────────────────
+#  Filtros 
 
 def filtrar_juegos(catalogo):
     print("\n-- Filtrar por --")
@@ -161,7 +161,7 @@ def filtrar_juegos(catalogo):
         for j in resultado:
             j.mostrar_info()
 
-# ── Accion especial segun tipo ────────────────────────────────────────────────
+# Accion especial segun tipo
 
 def accion_especial(catalogo):
     nombre = pedir_texto("Nombre del juego para accion especial: ")
@@ -188,7 +188,7 @@ def accion_especial(catalogo):
         else:
             print("Opcion invalida.")
 
-# ── Estadisticas ──────────────────────────────────────────────────────────────
+# Estadisticas
 
 def mostrar_estadisticas(catalogo):
     stats = catalogo.estadisticas()
